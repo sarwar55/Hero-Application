@@ -1,0 +1,11 @@
+<h4>login</h4>
+<form id="loginForm" #loginForm="ngForm">
+            <div class="login">
+                <label><b>Username</b></label>
+                <input type="text"  name="uname" required ngModel>
+                <label><b>Password</b></label>
+                <input type="password" pPassword name="psw" required ngModel/>
+                <button pButton type="button" label="Login" (click)=onLoginClick(loginForm)></button>
+                  <button pButton type="button" label="Reset" class="ui-button-warning" (click)=onResetClick(loginForm)></button>
+            </div>
+        </form>

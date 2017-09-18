@@ -1,0 +1,75 @@
+<!--The content below is only a placeholder and can be replaced.-->
+     <a routerLink="/" routerLinkActive="active">Logout</a>
+  <div style="text-align:center">
+   
+            <h1 class="title">
+              grid view
+            </h1>
+            <!--<p-tabMenu [model]="items"></p-tabMenu>-->
+  </div>
+
+    
+      
+        <div class="addBtn">
+            <button pButton type="button" label="add" (click)=onclickAdd()></button>
+        </div>
+        <div class="clear"></div>
+        <div class="row">
+            <p-dataTable [value]="beanArray" [responsive]="true"  [rows]="3" [paginator]="true" [sortMode]="multiple">
+                <p-column field="id" header="ID" [sortable]="true" [filter]="true" [style]="{'width':'10%'}"></p-column>
+                <p-column field="beanname" header="beanName" [sortable]="true" [filter]="true"></p-column>
+                <p-column field="brand" header="StartDateTime" [sortable]="true" [filter]="true"></p-column>
+                <p-column field="refreshrate" header="RefreshRate" [sortable]="true" [filter]="true"></p-column>
+                <p-column field="parameter" header="parameter" [sortable]="true" [filter]="true"></p-column>
+                <p-column field="query" header="Query" [sortable]="true" [filter]="true"></p-column>
+                <p-column field="lastrefreshtime" header="lastRefreshTime" [sortable]="true" [filter]="true"></p-column>
+                <p-column>
+                    <ng-template  let-val="rowData" pTemplate="body">
+                        <!--<a (click)="setPassedTruck(val); openModal()" >{{val.name}}</a>-->
+                        <button pButton type="button" label="Edit" (click)=openEditModal(val)></button>
+                        <button pButton type="button" label="Delete" class="ui-button-danger" (click)=openDeleteRecord(val)></button>
+                    </ng-template>
+                </p-column>
+            </p-dataTable>
+        </div>
+        <div>
+
+        </div>
+
+<div class="{{blackmodalShow}}">
+</div> 
+<div id="modelWindow" class={{visbleModel}} >
+  
+ <form   class="modal-content animate" #signupForm="ngForm" > <!--(ngSubmit)="registerUser(signupForm,$event)"-->
+    <h3>{{popupTitle}} </h3>
+      <div class="modelPopup">
+          <div class="rightDiv">
+            <input type="text" style="display:none"  name="id" [(ngModel)]="id">
+            <label><b>Bean Name:</b></label><br>
+            <input type="text"  name="beanname" required [(ngModel)]="beanname"><br>
+
+            <label><b>Brand:</b></label><br>
+            <input type="text" name="brand" required [(ngModel)]="brand"><br>
+            <label><b>Refresh Rate:</b></label><br>
+            <input type="text"  name="refreshrate" required  [(ngModel)]="refreshrate"><br>
+          </div>
+          <div class="leftDiv">
+          <label><b>Parameter:</b></label><br>
+          <input  type="text"  name="parameter" required [(ngModel)]="parameter"><br>
+          <label><b>Query:</b></label><br>
+          <input type="text" name="query" required  [(ngModel)]="query"><br>
+
+          <label><b>Last Refresh Time:</b></label><br>
+        <input type="text"  name="lastrefreshtime"  value="" required [(ngModel)]="lastrefreshtime">
+          </div>
+          <div class="clear"></div>
+          <div class="footerBtns">
+              <button pButton type="submit" label="Add" (click)=onclickOK(signupForm) class= {{addBtnVisible}}></button>
+              <button pButton  type="submit" label="Update" (click)=onclickUpdate(signupForm) class="{{updateBtnVisible}}"></button>
+              <button pButton type="button" class="ui-button-danger" label="Cancel" (click)=onclickCancel(signupForm)></button>
+          </div>
+          
+     </div>
+
+  </form>
+</div>

@@ -1,0 +1,8 @@
+{
+  beans: [
+         {"id":101,"beanname":"one","brand":"bhuma","refreshrate":"5","parameter":"aaa","query":"zzz","lastrefreshtime":"one"},
+         {"id":102,"beanname":"two","brand":"bhuma","refreshrate":"50","parameter":"ccc","query":"xxx","lastrefreshtime":"two"},
+         {"id":103,"beanname":"three","brand":"bhuma","refreshrate":"55","parameter":"dddd","query":"yyy","lastrefreshtime":"three"},
+         {"id":104,"beanname":"four","brand":"bhuma","refreshrate":"45","parameter":"bbbb","query":"vvv","lastrefreshtime":"four"}
+       ]
+}
